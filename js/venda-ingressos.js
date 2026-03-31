@@ -32,12 +32,12 @@ function carregarIngressos() {
 
         var tr = document.createElement('tr');
         tr.innerHTML =
-            '<td>' + sessaoTexto + '</td>' +
-            '<td>' + ingresso.nomeCliente + '</td>' +
-            '<td>' + ingresso.cpf + '</td>' +
+            '<td style="min-width:150px">' + sessaoTexto + '</td>' +
+            '<td style="min-width:120px">' + ingresso.nomeCliente + '</td>' +
+            '<td class="text-nowrap">' + ingresso.cpf + '</td>' +
             '<td>' + ingresso.assento + '</td>' +
             '<td>' + ingresso.pagamento + '</td>' +
-            '<td>' +
+            '<td class="text-nowrap">' +
                 '<button class="btn btn-sm btn-primary me-1" onclick="editarIngresso(' + i + ')">Editar</button>' +
                 '<button class="btn btn-sm btn-outline-light" onclick="excluirIngresso(' + i + ')">Excluir</button>' +
             '</td>';

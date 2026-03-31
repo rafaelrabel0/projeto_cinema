@@ -6,12 +6,12 @@ function carregarFilmes() {
     for (var i = 0; i < filmes.length; i++) {
         var tr = document.createElement('tr');
         tr.innerHTML =
-            '<td>' + filmes[i].titulo + '</td>' +
-            '<td>' + filmes[i].genero + '</td>' +
+            '<td style="min-width:150px">' + filmes[i].titulo + '</td>' +
+            '<td style="min-width:120px">' + filmes[i].genero + '</td>' +
             '<td>' + filmes[i].classificacao + '</td>' +
             '<td>' + filmes[i].duracao + ' min</td>' +
             '<td>' + filmes[i].dataEstreia + '</td>' +
-            '<td>' +
+            '<td class="text-nowrap">' +
                 '<button class="btn btn-sm btn-primary me-1" onclick="editarFilme(' + i + ')">Editar</button>' +
                 '<button class="btn btn-sm btn-outline-light" onclick="excluirFilme(' + i + ')">Excluir</button>' +
             '</td>';

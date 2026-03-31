@@ -26,13 +26,13 @@ function carregarSessoes() {
         var sala = salas[sessoes[i].salaIndex];
         var tr = document.createElement('tr');
         tr.innerHTML =
-            '<td>' + (filme ? filme.titulo : '-') + '</td>' +
-            '<td>' + (sala ? sala.nome : '-') + '</td>' +
-            '<td>' + sessoes[i].dataHora + '</td>' +
+            '<td style="min-width:150px">' + (filme ? filme.titulo : '-') + '</td>' +
+            '<td style="min-width:100px">' + (sala ? sala.nome : '-') + '</td>' +
+            '<td class="text-nowrap">' + sessoes[i].dataHora + '</td>' +
             '<td>R$ ' + sessoes[i].preco + '</td>' +
             '<td>' + sessoes[i].idioma + '</td>' +
             '<td>' + sessoes[i].formato + '</td>' +
-            '<td>' +
+            '<td class="text-nowrap">' +
                 '<button class="btn btn-sm btn-primary me-1" onclick="editarSessao(' + i + ')">Editar</button>' +
                 '<button class="btn btn-sm btn-outline-light" onclick="excluirSessao(' + i + ')">Excluir</button>' +
             '</td>';
