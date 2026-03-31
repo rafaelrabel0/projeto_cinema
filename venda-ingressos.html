@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Ingressos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Cinema</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="cadastro-filmes.html">Cadastro de Filmes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro-salas.html">Cadastro de Salas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro-sessoes.html">Cadastro de Sessões</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="venda-ingressos.html">Venda de Ingressos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sessoes.html">Sessões Disponíveis</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Venda de Ingressos</h2>
+        <form id="formIngresso">
+            <div class="mb-3">
+                <label for="sessao" class="form-label">Sessão</label>
+                <select class="form-select" id="sessao" required>
+                    <option value="">Selecione</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="nomeCliente" class="form-label">Nome do Cliente</label>
+                <input type="text" class="form-control" id="nomeCliente" required>
+            </div>
+            <div class="mb-3">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="cpf" required>
+            </div>
+            <div class="mb-3">
+                <label for="assento" class="form-label">Assento</label>
+                <input type="text" class="form-control" id="assento" placeholder="Ex: A10" required>
+            </div>
+            <div class="mb-3">
+                <label for="pagamento" class="form-label">Tipo de Pagamento</label>
+                <select class="form-select" id="pagamento" required>
+                    <option value="">Selecione</option>
+                    <option value="Cartão">Cartão</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Confirmar Venda</button>
+        </form>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/venda-ingressos.js"></script>
+</body>
+</html>
