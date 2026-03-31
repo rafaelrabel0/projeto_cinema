@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +8,17 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Cinema</a>
+            <a class="navbar-brand" href="index.html">Cine Belo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="cadastro-filmes.html">Cadastro de Filmes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cadastro-salas.html">Cadastro de Salas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cadastro-sessoes.html">Cadastro de Sessões</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro-filmes.html">Filmes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro-salas.html">Salas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro-sessoes.html">Sessões</a></li>
                     <li class="nav-item"><a class="nav-link" href="venda-ingressos.html">Venda de Ingressos</a></li>
                     <li class="nav-item"><a class="nav-link" href="sessoes.html">Sessões Disponíveis</a></li>
                 </ul>
@@ -27,7 +27,59 @@
     </nav>
 
     <div class="container mt-5">
-        <h1>Sistema de Controle de Cinema</h1>
+        <h1 class="mb-4">Cine Belo</h1>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-3">
+                <a href="cadastro-filmes.html" class="text-decoration-none">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Filmes</h5>
+                            <p class="card-text text-secondary">Cadastrar, editar e excluir filmes</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-3">
+                <a href="cadastro-salas.html" class="text-decoration-none">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Salas</h5>
+                            <p class="card-text text-secondary">Cadastrar, editar e excluir salas</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-3">
+                <a href="cadastro-sessoes.html" class="text-decoration-none">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Sessões</h5>
+                            <p class="card-text text-secondary">Criar sessões com filme, sala e horário</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-6 mb-3">
+                <a href="venda-ingressos.html" class="text-decoration-none">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Venda de Ingressos</h5>
+                            <p class="card-text text-secondary">Registrar vendas de ingressos</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-6 mb-3">
+                <a href="sessoes.html" class="text-decoration-none">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Sessões Disponíveis</h5>
+                            <p class="card-text text-secondary">Ver sessões e comprar ingressos</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>

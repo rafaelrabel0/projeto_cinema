@@ -34,7 +34,7 @@ for (var i = 0; i < sessoes.length; i++) {
     precoP.textContent = 'Preço: R$ ' + sessao.preco;
 
     var btn = document.createElement('a');
-    btn.className = 'btn btn-success';
+    btn.className = 'btn btn-primary';
     btn.href = 'venda-ingressos.html?sessao=' + i;
     btn.textContent = 'Comprar Ingresso';
 

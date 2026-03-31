@@ -16,6 +16,62 @@ for (var i = 0; i < salas.length; i++) {
     selectSala.appendChild(option);
 }
 
+function carregarSessoes() {
+    var sessoes = JSON.parse(localStorage.getItem('sessoes')) || [];
+    var tbody = document.getElementById('tabelaSessoes');
+    tbody.innerHTML = '';
+
+    for (var i = 0; i < sessoes.length; i++) {
+        var filme = filmes[sessoes[i].filmeIndex];
+        var sala = salas[sessoes[i].salaIndex];
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+            '<td>' + (filme ? filme.titulo : '-') + '</td>' +
+            '<td>' + (sala ? sala.nome : '-') + '</td>' +
+            '<td>' + sessoes[i].dataHora + '</td>' +
+            '<td>R$ ' + sessoes[i].preco + '</td>' +
+            '<td>' + sessoes[i].idioma + '</td>' +
+            '<td>' + sessoes[i].formato + '</td>' +
+            '<td>' +
+                '<button class="btn btn-sm btn-primary me-1" onclick="editarSessao(' + i + ')">Editar</button>' +
+                '<button class="btn btn-sm btn-outline-light" onclick="excluirSessao(' + i + ')">Excluir</button>' +
+            '</td>';
+        tbody.appendChild(tr);
+    }
+}
+
+function editarSessao(index) {
+    var sessoes = JSON.parse(localStorage.getItem('sessoes')) || [];
+    var sessao = sessoes[index];
+
+    document.getElementById('filme').value = sessao.filmeIndex;
+    document.getElementById('sala').value = sessao.salaIndex;
+    document.getElementById('dataHora').value = sessao.dataHora;
+    document.getElementById('preco').value = sessao.preco;
+    document.getElementById('idioma').value = sessao.idioma;
+    document.getElementById('formato').value = sessao.formato;
+    document.getElementById('editIndex').value = index;
+
+    document.getElementById('btnSalvar').textContent = 'Atualizar Sessão';
+    document.getElementById('btnCancelar').classList.remove('d-none');
+}
+
+function excluirSessao(index) {
+    if (confirm('Deseja excluir esta sessão?')) {
+        var sessoes = JSON.parse(localStorage.getItem('sessoes')) || [];
+        sessoes.splice(index, 1);
+        localStorage.setItem('sessoes', JSON.stringify(sessoes));
+        carregarSessoes();
+    }
+}
+
+document.getElementById('btnCancelar').addEventListener('click', function() {
+    document.getElementById('formSessao').reset();
+    document.getElementById('editIndex').value = -1;
+    document.getElementById('btnSalvar').textContent = 'Salvar Sessão';
+    this.classList.add('d-none');
+});
+
 document.getElementById('formSessao').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -29,9 +85,21 @@ document.getElementById('formSessao').addEventListener('submit', function(event)
     );
 
     var sessoes = JSON.parse(localStorage.getItem('sessoes')) || [];
-    sessoes.push(sessao);
+    var editIndex = document.getElementById('editIndex').value;
+
+    if (editIndex == -1) {
+        sessoes.push(sessao);
+    } else {
+        sessoes[editIndex] = sessao;
+    }
+
     localStorage.setItem('sessoes', JSON.stringify(sessoes));
 
-    alert('Sessão salva com sucesso!');
     this.reset();
+    document.getElementById('editIndex').value = -1;
+    document.getElementById('btnSalvar').textContent = 'Salvar Sessão';
+    document.getElementById('btnCancelar').classList.add('d-none');
+    carregarSessoes();
 });
+
+carregarSessoes();
